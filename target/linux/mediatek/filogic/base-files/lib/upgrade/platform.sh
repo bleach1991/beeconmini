@@ -54,6 +54,12 @@ platform_do_upgrade() {
 		CI_ROOTPART="rootfs"
 		emmc_do_upgrade "$1"
 		;;
+	beeconmini,seed-ac2)
+		CI_KERNPART="kernel"
+		CI_ROOTPART="rootfs"
+		CI_DATAPART="rootfs_data"
+		emmc_do_upgrade "$1"
+		;;
 	*)
 		nand_do_upgrade "$1"
 		;;
@@ -98,6 +104,7 @@ platform_copy_config() {
 			;;
 		esac
 		;;
+	beeconmini,seed-ac2|\
 	cmcc,rax3000m-emmc|\
 	glinet,gl-mt2500|\
 	glinet,gl-mt6000|\
